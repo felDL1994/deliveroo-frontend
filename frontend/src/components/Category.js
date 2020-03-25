@@ -9,7 +9,13 @@ const Category = props => {
 
       <div className="meals-container">
         {props.meals.map((meal, index) => {
-          return <Meal {...meal}></Meal>;
+          return (
+            <Meal
+              {...meal}
+              setSelectedProducts={props.setSelectedProducts}
+              selectedProducts={props.selectedProducts}
+            ></Meal>
+          );
         })}
       </div>
     </div>

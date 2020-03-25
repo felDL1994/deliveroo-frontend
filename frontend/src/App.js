@@ -53,13 +53,24 @@ function App() {
                       }
                       return (
                         <Category
+                          setSelectedProducts={setSelectedProducts}
+                          selectedProducts={selectedProducts}
                           name={category.name}
                           meals={category.meals}
                         ></Category>
                       );
                     })}
                   </div>
-                  <div className="basket">Le panier</div>
+                  <div className="basket">
+                    {selectedProducts.map(selectedProduct => {
+                      return (
+                        <div>
+                          <p>{selectedProduct.title}</p>
+                          <p>{selectedProduct.quantity}</p>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
