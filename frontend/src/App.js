@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Logo from "./assets/images/logo.png";
+import Category from "./components/Category";
 import "./App.css";
 
 function App() {
@@ -35,63 +36,13 @@ function App() {
             <h1>{data.restaurant.name}</h1>
             <div className="restaurant-info">
               <p>{data.restaurant.description}</p>
-              <img src={data.restaurant.picture} alt="" />
+              <img src={data.restaurant.picture} alt={data.restaurant.name} />
             </div>
             <div className="grey-back">
               <div className="wrapper">
                 <div className="restaurant-details">
                   <div className="meals">
-                    <h3>Brunch</h3>
-
-                    <div className="meals-container">
-                      <div className="meal-container">
-                        <div>
-                          <p>Brunch authentique 1 personne</p>
-                          <p>Assiette de jambon cuit, jambon</p>
-
-                          <div className="meal-horizontal">
-                            <p>25,00€</p>
-                            <p>Populaire</p>
-                          </div>
-                        </div>
-                        <img
-                          src="https://f.roocdn.com/images/menu_items/1583350/item-image.jpg"
-                          alt=""
-                        />
-                      </div>
-
-                      <div className="meal-container">
-                        <div>
-                          <p>Brunch authentique 1 personne</p>
-                          <p>Assiette de jambon cuit, jambon</p>
-
-                          <div className="meal-horizontal">
-                            <p>25,00€</p>
-                            <p>Populaire</p>
-                          </div>
-                        </div>
-                        <img
-                          src="https://f.roocdn.com/images/menu_items/1583350/item-image.jpg"
-                          alt=""
-                        />
-                      </div>
-
-                      <div className="meal-container">
-                        <div>
-                          <p>Brunch authentique 1 personne</p>
-                          <p>Assiette de jambon cuit, jambon</p>
-
-                          <div className="meal-horizontal">
-                            <p>25,00€</p>
-                            <p>Populaire</p>
-                          </div>
-                        </div>
-                        <img
-                          src="https://f.roocdn.com/images/menu_items/1583350/item-image.jpg"
-                          alt=""
-                        />
-                      </div>
-                    </div>
+                    <Category></Category>
                   </div>
                   <div className="basket">Le panier</div>
                 </div>
