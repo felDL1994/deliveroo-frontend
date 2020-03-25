@@ -1,21 +1,18 @@
 import React from "react";
 
-const Meal = () => {
+const Meal = props => {
   return (
     <div>
       <div className="meal-container">
         <div>
-          <p>Brunch authentique 1 personne</p>
-          <p>Assiette de jambon cuit, jambon</p>
+          <p>{props.title}</p>
+          <p>{props.description}</p>
           <div className="meal-horizontal">
-            <p>25,00€</p>
-            <p>Populaire</p>
+            <p>{props.price}</p>
+            <p>{props.popular}</p>
           </div>
         </div>
-        <img
-          src="https://f.roocdn.com/images/menu_items/1583350/item-image.jpg"
-          alt=""
-        />
+        <img src={props.picture} alt={props.title} />
       </div>
     </div>
   );
