@@ -25,11 +25,49 @@
   width: 350px;
 }
 
-.content {
+.grey-back {
   background-color: #f4f5f5;
 }
 
-.details {
+.restaurant-details {
+  display: flex;
+  flex-direction: row;
+}
+
+.basket {
+  width: 350px;
+}
+
+.meals {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.meal-container {
+  display: flex;
+  width: 400px;
+  flex-direction: row;
+  background-color: white;
+}
+.meal-container > div {
+  display: flex;
+  flex: 1;
+}
+
+.meals-container {
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.meal-container > img {
+  width: 100px;
+  height: 100px;
+}
+
+.meal-horizontal {
   display: flex;
   flex-direction: row;
 }

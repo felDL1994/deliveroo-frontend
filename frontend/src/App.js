@@ -37,24 +37,63 @@ function App() {
               <p>{data.restaurant.description}</p>
               <img src={data.restaurant.picture} alt="" />
             </div>
-          </div>
+            <div className="grey-back">
+              <div className="wrapper">
+                <div className="restaurant-details">
+                  <div className="meals">
+                    <h3>Brunch</h3>
 
-          <div className="content">
-            <div className="wrapper">
-              <div className="details">
-                <div className="menus">
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Excepturi quis nam modi voluptas pariatur dicta velit quasi,
-                    fugit aliquam hic nulla aut culpa assumenda? Debitis et
-                    laboriosam vero at aliquid.
-                  </p>
-                </div>
-                <div className="basket">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Maiores molestias corporis ab vitae corrupti eum quia optio!
-                  Aut voluptatibus modi pariatur rerum ab sapiente ex accusamus
-                  soluta odio delectus! Possimus.
+                    <div className="meals-container">
+                      <div className="meal-container">
+                        <div>
+                          <p>Brunch authentique 1 personne</p>
+                          <p>Assiette de jambon cuit, jambon</p>
+
+                          <div className="meal-horizontal">
+                            <p>25,00€</p>
+                            <p>Populaire</p>
+                          </div>
+                        </div>
+                        <img
+                          src="https://f.roocdn.com/images/menu_items/1583350/item-image.jpg"
+                          alt=""
+                        />
+                      </div>
+
+                      <div className="meal-container">
+                        <div>
+                          <p>Brunch authentique 1 personne</p>
+                          <p>Assiette de jambon cuit, jambon</p>
+
+                          <div className="meal-horizontal">
+                            <p>25,00€</p>
+                            <p>Populaire</p>
+                          </div>
+                        </div>
+                        <img
+                          src="https://f.roocdn.com/images/menu_items/1583350/item-image.jpg"
+                          alt=""
+                        />
+                      </div>
+
+                      <div className="meal-container">
+                        <div>
+                          <p>Brunch authentique 1 personne</p>
+                          <p>Assiette de jambon cuit, jambon</p>
+
+                          <div className="meal-horizontal">
+                            <p>25,00€</p>
+                            <p>Populaire</p>
+                          </div>
+                        </div>
+                        <img
+                          src="https://f.roocdn.com/images/menu_items/1583350/item-image.jpg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="basket">Le panier</div>
                 </div>
               </div>
             </div>
