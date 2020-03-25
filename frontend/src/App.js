@@ -42,7 +42,14 @@ function App() {
               <div className="wrapper">
                 <div className="restaurant-details">
                   <div className="meals">
-                    <Category></Category>
+                    {data.categories.map((category, index) => {
+                      return (
+                        <Category
+                          name={category.name}
+                          meals={category.meals}
+                        ></Category>
+                      );
+                    })}
                   </div>
                   <div className="basket">Le panier</div>
                 </div>
