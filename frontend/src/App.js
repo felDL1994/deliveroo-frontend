@@ -2,11 +2,16 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Logo from "./assets/images/logo.png";
 import Category from "./components/Category";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 import "./App.css";
+
+library.add(faStar);
 
 function App() {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [selectedProducts, setSelectedProducts] = useState([]);
 
   useEffect(async () => {
     const fetchData = async () => {
@@ -43,6 +48,9 @@ function App() {
                 <div className="restaurant-details">
                   <div className="meals">
                     {data.categories.map((category, index) => {
+                      if (category.meals.length === 0) {
+                        return null;
+                      }
                       return (
                         <Category
                           name={category.name}
