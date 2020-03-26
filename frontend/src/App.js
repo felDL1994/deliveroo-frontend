@@ -82,10 +82,9 @@ function App() {
               <div className="panier">
                 <div className="panier-card">
                   <button className="panier-valider">Valider</button>
-
                   {selectedProducts.map((selectedProduct, index) => {
                     return (
-                      <div>
+                      <div className="panier-produits">
                         <div>
                           <p>
                             <button
@@ -127,7 +126,11 @@ function App() {
                       </div>
                     );
                   })}
-                  <div>
+                  <div className="panier-resume">
+                    <p>Sous-total: {total.toFixed(2)}</p>
+                    <p>Frais de livraison: 2,50€</p>
+                  </div>
+                  <div className="panier-total">
                     <p>Total : {total.toFixed(2)}</p>
                   </div>
                 </div>

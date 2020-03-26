@@ -8,7 +8,6 @@
 }
 
 .top {
-  height: 60px;
   border-bottom: 1px solid #e9ebeb;
 }
 .restaurant-infos {
@@ -31,6 +30,12 @@
 .restaurant-description {
   flex: 1 1;
   margin-right: 30px;
+}
+
+.restaurant-description > p {
+  color: #868a8a;
+  font-size: 1.2rem;
+  line-height: 1.5;
 }
 
 .restaurant-infostext > img {
@@ -193,4 +198,10 @@
   margin: 0 10px;
   font-weight: 600;
   font-size: 1.2rem;
+}
+
+.panier-resume {
+  margin: 0 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #d1d7d7;
 }
