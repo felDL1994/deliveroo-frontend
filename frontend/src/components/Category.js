@@ -4,10 +4,10 @@ import "../App.css";
 
 const Category = props => {
   return (
-    <div className="menu-item">
+    <div className="menu">
       <h3>{props.name}</h3>
 
-      <div className="menus-container">
+      <div className="menu-container">
         {props.meals.map((meal, index) => {
           return (
             <Meal

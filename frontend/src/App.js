@@ -52,7 +52,6 @@ function App() {
                     <h1>{data.restaurant.name}</h1>
                     <p>{data.restaurant.description}</p>
                   </div>
-
                   <img
                     src={data.restaurant.picture}
                     alt={data.restaurant.name}
@@ -61,10 +60,10 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="content">
-            <div className="wrapper">
-              <div className="restaurant-details">
-                <div className="meals">
+          <div className="body">
+            <div className="content">
+              <div className="menus">
+                <div className="choix-menu">
                   {data.categories.map((category, index) => {
                     if (category.meals.length === 0) {
                       return null;
@@ -79,10 +78,11 @@ function App() {
                     );
                   })}
                 </div>
-                <div className="basket">
-                  <div>
-                    <button>Valider</button>
-                  </div>
+              </div>
+              <div className="panier">
+                <div className="panier-card">
+                  <button className="panier-valider">Valider</button>
+
                   {selectedProducts.map((selectedProduct, index) => {
                     return (
                       <div>

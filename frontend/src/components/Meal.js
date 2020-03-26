@@ -12,9 +12,9 @@ const Meal = ({
   setSelectedProducts
 }) => {
   return (
-    <div>
+    <div className="menu-content">
       <div
-        className="meal-container"
+        className="menu-card"
         onClick={() => {
           const copy = [...selectedProducts];
 
@@ -32,25 +32,22 @@ const Meal = ({
           setSelectedProducts(copy);
         }}
       >
-        <div className="menu-card">
-          <div className="menu-text">
-            <h3 className="menu-title">{title}</h3>
-            <p className="menu-description">{description}</p>
-            <div className="menu-horizontal">
-              <span>{price} €</span>
-              {popular === true ? (
-                <span className="menu-popular">
-                  <FontAwesomeIcon icon="star"></FontAwesomeIcon> Populaire
-                </span>
-              ) : null}
-            </div>
-          </div>
-
-          <div className="menu-picture">
-            {picture ? (
-              <img src={picture} alt={title} style={{ objectFit: "cover" }} />
+        <div className="menu-text">
+          <h3>{title}</h3>
+          <p>{description}</p>
+          <div className="menu-infos">
+            <span className="menu-price">{price} €</span>
+            {popular === true ? (
+              <span className="menu-popular">
+                <FontAwesomeIcon icon="star"></FontAwesomeIcon> Populaire
+              </span>
             ) : null}
           </div>
+        </div>
+        <div className="menu-picture">
+          {picture ? (
+            <img src={picture} alt={title} style={{ objectFit: "cover" }} />
+          ) : null}
         </div>
       </div>
     </div>
