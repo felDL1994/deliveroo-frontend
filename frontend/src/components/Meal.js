@@ -37,7 +37,7 @@ const Meal = ({
             <h3 className="menu-title">{title}</h3>
             <p className="menu-description">{description}</p>
             <div className="menu-horizontal">
-              <span>{price}</span>
+              <span>{price} €</span>
               {popular === true ? (
                 <span className="menu-popular">
                   <FontAwesomeIcon icon="star"></FontAwesomeIcon> Populaire

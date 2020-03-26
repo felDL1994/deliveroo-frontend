@@ -37,19 +37,31 @@ function App() {
       ) : (
         <div>
           <div className="header">
-            {" "}
-            <div className="wrapper">
-              <img className="logo" src={Logo} alt="" />
+            <div className="top">
+              <div className="top-logo">
+                <img
+                  style={{ height: "60px" }}
+                  className="logo"
+                  src={Logo}
+                  alt=""
+                />
+              </div>
+              <div className="restaurant-infos">
+                <div className="restaurant-infostext">
+                  <div className="restaurant-description">
+                    <h1>{data.restaurant.name}</h1>
+                    <p>{data.restaurant.description}</p>
+                  </div>
+
+                  <img
+                    src={data.restaurant.picture}
+                    alt={data.restaurant.name}
+                  />
+                </div>
+              </div>
             </div>
           </div>
-          <div className="wrapper">
-            <h1>{data.restaurant.name}</h1>
-            <div className="restaurant-info">
-              <p>{data.restaurant.description}</p>
-              <img src={data.restaurant.picture} alt={data.restaurant.name} />
-            </div>
-          </div>
-          <div className="grey-back">
+          <div className="content">
             <div className="wrapper">
               <div className="restaurant-details">
                 <div className="meals">
