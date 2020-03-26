@@ -12,6 +12,11 @@ function App() {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [selectedProducts, setSelectedProducts] = useState([]);
+  let total = 0;
+  for (let i = 0; i < selectedProducts.length; i++) {
+    total =
+      total + Number(selectedProducts[i].price) * selectedProducts[i].quantity;
+  }
 
   useEffect(async () => {
     const fetchData = async () => {
@@ -62,14 +67,58 @@ function App() {
                     })}
                   </div>
                   <div className="basket">
-                    {selectedProducts.map(selectedProduct => {
+                    <div>
+                      <button>Valider</button>
+                    </div>
+                    {selectedProducts.map((selectedProduct, index) => {
                       return (
                         <div>
-                          <p>{selectedProduct.title}</p>
-                          <p>{selectedProduct.quantity}</p>
+                          <div>
+                            <p>
+                              <button
+                                onClick={() => {
+                                  const newSelectedProducts = [
+                                    ...selectedProducts
+                                  ];
+                                  /*                              alert(index);
+                                   */
+                                  if (
+                                    newSelectedProducts[index].quantity === 1
+                                  ) {
+                                    newSelectedProducts.splice(index, 1);
+                                  } else {
+                                    newSelectedProducts[index].quantity--;
+                                  }
+
+                                  setSelectedProducts(newSelectedProducts);
+                                }}
+                              >
+                                -
+                              </button>
+                              {selectedProduct.quantity}
+                              <button
+                                onClick={() => {
+                                  const newSelectedProducts = [
+                                    ...selectedProducts
+                                  ];
+                                  /*                              alert(index);
+                                   */
+
+                                  newSelectedProducts[index].quantity++;
+                                  setSelectedProducts(newSelectedProducts);
+                                }}
+                              >
+                                +
+                              </button>
+                              {selectedProduct.title}
+                            </p>
+                          </div>
                         </div>
                       );
                     })}
+                    <div>
+                      <p>Total : {total}</p>
+                    </div>
                   </div>
                 </div>
               </div>
