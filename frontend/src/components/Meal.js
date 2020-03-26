@@ -32,21 +32,26 @@ const Meal = ({
           setSelectedProducts(copy);
         }}
       >
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <p>{title}</p>
-          <p style={{ color: "grey" }}>{description}</p>
-          <div className="meal-horizontal">
-            <p>{price}</p>
-            {popular === true ? (
-              <p>
-                <FontAwesomeIcon icon="star"></FontAwesomeIcon>Populaire
-              </p>
+        <div className="menu-card">
+          <div className="menu-text">
+            <h3 className="menu-title">{title}</h3>
+            <p className="menu-description">{description}</p>
+            <div className="menu-horizontal">
+              <span>{price}</span>
+              {popular === true ? (
+                <span className="menu-popular">
+                  <FontAwesomeIcon icon="star"></FontAwesomeIcon> Populaire
+                </span>
+              ) : null}
+            </div>
+          </div>
+
+          <div className="menu-picture">
+            {picture ? (
+              <img src={picture} alt={title} style={{ objectFit: "cover" }} />
             ) : null}
           </div>
         </div>
-        {picture ? (
-          <img src={picture} alt={title} style={{ objectFit: "cover" }} />
-        ) : null}
       </div>
     </div>
   );

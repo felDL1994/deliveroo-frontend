@@ -48,77 +48,75 @@ function App() {
               <p>{data.restaurant.description}</p>
               <img src={data.restaurant.picture} alt={data.restaurant.name} />
             </div>
-            <div className="grey-back">
-              <div className="wrapper">
-                <div className="restaurant-details">
-                  <div className="meals">
-                    {data.categories.map((category, index) => {
-                      if (category.meals.length === 0) {
-                        return null;
-                      }
-                      return (
-                        <Category
-                          setSelectedProducts={setSelectedProducts}
-                          selectedProducts={selectedProducts}
-                          name={category.name}
-                          meals={category.meals}
-                        ></Category>
-                      );
-                    })}
+          </div>
+          <div className="grey-back">
+            <div className="wrapper">
+              <div className="restaurant-details">
+                <div className="meals">
+                  {data.categories.map((category, index) => {
+                    if (category.meals.length === 0) {
+                      return null;
+                    }
+                    return (
+                      <Category
+                        setSelectedProducts={setSelectedProducts}
+                        selectedProducts={selectedProducts}
+                        name={category.name}
+                        meals={category.meals}
+                      ></Category>
+                    );
+                  })}
+                </div>
+                <div className="basket">
+                  <div>
+                    <button>Valider</button>
                   </div>
-                  <div className="basket">
-                    <div>
-                      <button>Valider</button>
-                    </div>
-                    {selectedProducts.map((selectedProduct, index) => {
-                      return (
+                  {selectedProducts.map((selectedProduct, index) => {
+                    return (
+                      <div>
                         <div>
-                          <div>
-                            <p>
-                              <button
-                                onClick={() => {
-                                  const newSelectedProducts = [
-                                    ...selectedProducts
-                                  ];
-                                  /*                              alert(index);
-                                   */
-                                  if (
-                                    newSelectedProducts[index].quantity === 1
-                                  ) {
-                                    newSelectedProducts.splice(index, 1);
-                                  } else {
-                                    newSelectedProducts[index].quantity--;
-                                  }
+                          <p>
+                            <button
+                              onClick={() => {
+                                const newSelectedProducts = [
+                                  ...selectedProducts
+                                ];
+                                /*                              alert(index);
+                                 */
+                                if (newSelectedProducts[index].quantity === 1) {
+                                  newSelectedProducts.splice(index, 1);
+                                } else {
+                                  newSelectedProducts[index].quantity--;
+                                }
 
-                                  setSelectedProducts(newSelectedProducts);
-                                }}
-                              >
-                                -
-                              </button>
-                              {selectedProduct.quantity}
-                              <button
-                                onClick={() => {
-                                  const newSelectedProducts = [
-                                    ...selectedProducts
-                                  ];
-                                  /*                              alert(index);
-                                   */
+                                setSelectedProducts(newSelectedProducts);
+                              }}
+                            >
+                              -
+                            </button>
+                            {selectedProduct.quantity}
+                            <button
+                              onClick={() => {
+                                const newSelectedProducts = [
+                                  ...selectedProducts
+                                ];
+                                /*                              alert(index);
+                                 */
 
-                                  newSelectedProducts[index].quantity++;
-                                  setSelectedProducts(newSelectedProducts);
-                                }}
-                              >
-                                +
-                              </button>
-                              {selectedProduct.title}
-                            </p>
-                          </div>
+                                newSelectedProducts[index].quantity++;
+                                setSelectedProducts(newSelectedProducts);
+                              }}
+                            >
+                              +
+                            </button>
+                            {selectedProduct.title}
+                          </p>
                         </div>
-                      );
-                    })}
-                    <div>
-                      <p>Total : {total}</p>
-                    </div>
+                      </div>
+                    );
+                  })}
+                  <div>
+                    <p>Total : {total.toFixed(2)}</p>
                   </div>
                 </div>
               </div>
