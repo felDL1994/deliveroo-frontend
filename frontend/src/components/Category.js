@@ -5,8 +5,7 @@ import "../App.css";
 const Category = props => {
   return (
     <div className="menu">
-      <h3>{props.name}</h3>
-
+      <h2>{props.name}</h2>
       <div className="menu-container">
         {props.meals.map((meal, index) => {
           return (
