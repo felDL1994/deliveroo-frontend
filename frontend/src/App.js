@@ -155,7 +155,7 @@ function App() {
                   </div>
                   <div className="panier-total">
                     <span className="panier-text">Total </span>
-                    <span className="panier-prix">{total.toFixed(2)}</span>
+                    <span className="panier-prix">{total.toFixed(2)} €</span>
                   </div>
                 </div>
               </div>
